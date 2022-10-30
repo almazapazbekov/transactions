@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="form-group">
+      <form method="POST">
+          {{ form.csrf_token }}
+          <p>Отменить транзакцию № {{ transactions.id }}, на сумму {{ transactions.value }} ?</p>
+          <input type="submit" value="отменить" class="btn btn-danger"/>
+      </form>
+    </div>
+
+{% endblock %}

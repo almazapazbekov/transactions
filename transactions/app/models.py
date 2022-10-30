@@ -8,6 +8,7 @@ class Transactions(db.Model):
     unit = db.Column(db.String(10))
     comment = db.Column(db.String(10))
 
+
     def __repr__(self):
         return self.name
 

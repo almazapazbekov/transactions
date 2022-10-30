@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">#{{ transactions.id }}- {{transactions.value}} {{transactions.unit}}</h5>
+            <a href="{{url_for('transaction_delete', transaction_id=transactions.id)}}" class="card-link">отменить транзакцию</a>
+              <br>
+              <a>изменить транзакцию нельзя, можно только отменить</a>
+          </div>
+        </div>
+    </div>
+{% endblock %}
